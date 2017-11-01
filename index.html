@@ -1,28 +1,18 @@
 <html>
 <head>
-	<title></title>
-	<style media="screen" type="text/css">
-		#b_container132 {
-		 width: 1200px 
-		}
-	</style>
+	<title>Test iFrame</title>
+	<script src="https://code.jquery.com/jquery-3.2.1.js" />
+	<script type="text/javascript">
 
+	$.when( $.ready ).then(function() {
+	  window.alert('hello')
+	});
 
-	
+	</script>
 </head>
 <body>
-	<h1> Hello </h1>
-<div id="b_container132">
-<iframe src="https://staging.cars.cartrawler.com/emirates/widget?type=html&clientId=122070&locCode=MAD&num=3&curr=EUR&residencyId=IE&pkDateTime=201805131650&rtDateTime=201805261000&testToken=&passengers=1" height="513" width="100%" frameborder="0" class="IBE_Car_Iframe" title="Car hire companies: National, Alamo, Sixt, Avis, Budget, Thrifty and Europcar" role="application" sandbox="allow-scripts allow-forms allow-popups allow-same-origin"></iframe>
-</div>
+
+	<h1>Hi.</h1>
 
 </body>
-
-
-	<script type="text/javascript">
-	window.addEventListener("ctnoavail", function(e){
-	    console.log(e);
-	});
-	</script>
 </html>
-
