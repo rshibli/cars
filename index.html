@@ -4,15 +4,19 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 	<script type="text/javascript">
 
-	$.when( $.ready ).then(function() {
-	  window.alert('hello')
-	});
+	function ct_event() {
+		var frames = window.parent.frames; //var frames = window.frames; 
+		frames.postMessage('ctnoavail', '*'); 
+		$('#notify').html("I've sent an event.");
+	}
 
 	</script>
 </head>
 <body>
 
 	<h1>Hi.</h1>
-
+	<button onclick="ct_event()">Trigger ctnoavail event</button>
+	<p id="notify">
+	</p>
 </body>
 </html>
