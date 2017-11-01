@@ -2,6 +2,7 @@
 <head>
 	<title>Test iFrame</title>
 	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/locale/af.js"></script>
 	<script type="text/javascript">
 
 	$.when( $.ready ).then(function() {
@@ -13,8 +14,9 @@
 		// frames
 
 		parent.postMessage('ctnoavail', '*'); 
-		d = Date.now();
-		$('#notify').append("<li>" + Date.now().toString() + ": I've sent an event.</li>");
+		var date = new Date();
+		var formattedDate = moment().format("dddd, MMMM Do YYYY, h:mm:ss a");
+		$('#notify').append("<li>" + formattedDate + ": I've sent an event.</li>");
 	}
 
 	</script>
