@@ -4,16 +4,17 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 	<script type="text/javascript">
 
-	// $.when( $.ready ).then(function() {
-	//   window.alert('hello')
-	// });
+	$.when( $.ready ).then(function() {
+	  $('#trigger').click(ct_event);
+	});
 
 	function ct_event() {
 		// var frames = window.parent.frames; //var frames = window.frames; 
 		// frames
 
 		parent.postMessage('ctnoavail', '*'); 
-		$('#notify').html("I've sent an event.");
+		d = Date.now();
+		$('#notify').append("<li>" + Date.now().toString() + ": I've sent an event.</li>");
 	}
 
 	</script>
@@ -21,8 +22,8 @@
 <body>
 
 	<h1>Hi. There.</h1>
-	<button onclick="ct_event()">Trigger ctnoavail event</button>
-	<p id="notify">
-	</p>
+	<button id="trigger">Trigger ctnoavail event</button>
+	<ul id="notify">
+	</ul>
 </body>
 </html>
